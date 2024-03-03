@@ -4,15 +4,16 @@ package op3;
 
 // servicio op3
 service Op3 {
-	rpc Operation1 (Op3Request) returns (Op3Reply);
+	rpc Operation3 (Op3Request) returns (Op3Reply);
 }
 
 // mensaje solicitud
 message Op3Request {
   float cateto1 = 1;
+  float cateto2 = 2;
 }
 
 // mensaje respuesta
 message Op3Reply {
-  float cateto1 = 1;
+  float hipotenusa = 1;
 }

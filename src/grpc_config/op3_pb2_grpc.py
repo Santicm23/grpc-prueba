@@ -15,8 +15,8 @@ class Op3Stub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Operation1 = channel.unary_unary(
-                '/op3.Op3/Operation1',
+        self.Operation3 = channel.unary_unary(
+                '/op3.Op3/Operation3',
                 request_serializer=op3__pb2.Op3Request.SerializeToString,
                 response_deserializer=op3__pb2.Op3Reply.FromString,
                 )
@@ -26,7 +26,7 @@ class Op3Servicer(object):
     """servicio op3
     """
 
-    def Operation1(self, request, context):
+    def Operation3(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -35,8 +35,8 @@ class Op3Servicer(object):
 
 def add_Op3Servicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Operation1': grpc.unary_unary_rpc_method_handler(
-                    servicer.Operation1,
+            'Operation3': grpc.unary_unary_rpc_method_handler(
+                    servicer.Operation3,
                     request_deserializer=op3__pb2.Op3Request.FromString,
                     response_serializer=op3__pb2.Op3Reply.SerializeToString,
             ),
@@ -52,7 +52,7 @@ class Op3(object):
     """
 
     @staticmethod
-    def Operation1(request,
+    def Operation3(request,
             target,
             options=(),
             channel_credentials=None,
@@ -62,7 +62,7 @@ class Op3(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/op3.Op3/Operation1',
+        return grpc.experimental.unary_unary(request, target, '/op3.Op3/Operation3',
             op3__pb2.Op3Request.SerializeToString,
             op3__pb2.Op3Reply.FromString,
             options, channel_credentials,

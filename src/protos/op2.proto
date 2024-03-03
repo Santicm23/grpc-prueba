@@ -9,10 +9,10 @@ service Op2 {
 
 // mensaje solicitud
 message Op2Request {
-  float cateto1 = 1;
+  float cateto2 = 1;
 }
 
 // mensaje respuesta
 message Op2Reply {
-  float cateto1 = 1;
+  float cateto2 = 1;
 }
